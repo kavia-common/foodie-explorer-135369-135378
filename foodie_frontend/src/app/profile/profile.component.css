@@ -1,0 +1,300 @@
+/* Minimal shared tokens and helpers for this component (avoids unresolved imports in component CSS) */
+:root {
+  --color-ffffff: #ffffff;
+  --color-000000: #000000;
+  --color-121212: #121212;
+  --color-d9d9d9: #d9d9d9;
+  --color-484848: #484848;
+  --color-129575: #129575;
+  --color-71b1a1: #71b1a1;
+  --color-ffad30: #ffad30;
+  --color-ffe1b3: #ffe1b3;
+  --radius-30: 30px;
+  --radius-20: 20px;
+  --radius-12: 12px;
+  --radius-10: 10px;
+  --radius-100: 100px;
+  --shadow-5: 0 4px 4px rgba(0,0,0,1);
+  --shadow-2: 0 0 8px #6c6c6c;
+  --screen-w: 375px;
+  --screen-h: 812px;
+}
+
+/* Typography helpers needed by this screen */
+.text-typo-84 { font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 18px; line-height: 27px; font-weight: 600; color: var(--color-121212); }
+.text-typo-82 { font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 21px; font-weight: 600; color: var(--color-ffffff); }
+.text-typo-83 { font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 8px; line-height: 12px; font-weight: 400; color: var(--color-d9d9d9); }
+.text-typo-78 { font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 8px; line-height: 12px; font-weight: 400; color: var(--color-000000); }
+.text-typo-65 { font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 11px; line-height: 16.5px; font-weight: 400; color: var(--color-d9d9d9); }
+.text-typo-85 { font-family: "SF Pro Display", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 15px; line-height: 17.9px; font-weight: 500; color: var(--color-484848); }
+.text-typo-79 { font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 11px; line-height: 16.5px; font-weight: 600; color: var(--color-ffffff); text-align: left; }
+
+/* Utility page host (to center the mock phone screen) */
+.page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--color-ffffff); }
+.screen { position: relative; width: var(--screen-w); height: var(--screen-h); background: var(--color-ffffff); border-radius: var(--radius-30); overflow: hidden; }
+.layer { position: absolute; }
+
+/* Screen-specific styles ported from assets/profile-257-2468.css */
+
+/* Absolute placements computed from Figma root to screen origin mapping */
+
+/* Header more icon (vuesax/linear/more at x:5727,y:-374,w:24,h:24) */
+.header-more {
+  position: absolute;
+  left: 321px; /* 5727 - 5406 */
+  top: 56px;   /* -374 - (-430) */
+  width: 24px;
+  height: 24px;
+  background: var(--color-484848); /* approximate icon stroke color */
+  border-radius: 4px;
+}
+
+/* Avatar group: ellipse 99x99 at (30,91) from screen; image extends beyond mask to match */
+.avatar {
+  position: absolute;
+  left: 30px; /* 5436 - 5406 */
+  top: 91px;  /* -339 - (-430) */
+  width: 99px;
+  height: 99px;
+}
+.avatar-ellipse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--color-c1c1c1, #c4c4c4); /* style_66 fallback */
+  overflow: hidden;
+}
+.avatar-image {
+  position: absolute;
+  left: -8px; /* 5428-5436 */
+  top: -6px;  /* -345 - (-339) */
+  width: 124px;
+  height: 164px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Stats blocks */
+.stat {
+  position: absolute;
+  width: auto;
+  height: auto;
+}
+.stat-recipe {
+  left: 154px; /* 5560 - 5406 */
+  top: 116px;  /* -314 - (-430) */
+  width: 38px; height: 49px;
+}
+.stat-followers {
+  left: 217px; /* 5623 - 5406 */
+  top: 116px;
+  width: 51px; height: 49px;
+}
+.stat-following {
+  left: 293px; /* 5699 - 5406 */
+  top: 116px;
+  width: 52px; height: 49px;
+}
+.stat-label { /* text-typo-70 already applied in HTML via class */ }
+.stat-value { /* text-typo-90 already applied in HTML via class */ }
+
+/* Name, Role, Bio */
+.name {
+  position: absolute;
+  left: 30px; /* 5436 - 5406 */
+  top: 205px; /* -225 - (-430) */
+  width: 146px; height: 24px;
+}
+.role {
+  position: absolute;
+  left: 30px;
+  top: 229px; /* -201 - (-430) */
+  width: auto; height: 17px;
+}
+.bio {
+  position: absolute;
+  left: 30px;
+  top: 256px; /* -174 - (-430) */
+  width: 256px; height: 51px;
+  white-space: pre-line;
+}
+
+/* Tabs area (root Tabs frame at x:5406,y:-108,w:375,h:58) */
+.tabs {
+  position: absolute;
+  left: 0px;
+  top: 322px; /* -108 - (-430) */
+  width: var(--screen-w);
+  height: 58px;
+}
+.tab {
+  position: absolute;
+  height: 33px;
+}
+/* Active tab (Recipe): inner frame at x:20,y:12 relative to screen; label at x:12,y:8 inside */
+.tab-recipe {
+  left: 20px;  /* 5426 - 5406 */
+  top: 334px;  /* -96 - (-430) */
+  width: 107px; height: 33px;
+}
+.tab-recipe .tab-chip {
+  position: absolute;
+  inset: 0;
+  background: var(--color-129575);
+  border-radius: var(--radius-10);
+}
+.tab-recipe .tab-label {
+  position: absolute;
+  left: 12px;  /* 5438-5426 */
+  top: 8px;    /* -88 - (-96) */
+}
+
+/* Inactive tabs */
+.tab-videos {
+  left: 134px; /* 5540 - 5406 */
+  top: 334px;
+  width: 107px; height: 33px;
+}
+.tab-tag {
+  left: 248px; /* 5654 - 5406 */
+  top: 334px;
+  width: 107px; height: 33px;
+}
+.tab-chip-inactive {
+  position: absolute;
+  inset: 0;
+  background: var(--color-898989, #898989); /* style_55 background for inactive */
+  border-radius: var(--radius-10);
+  opacity: 1;
+}
+.tab-label-inactive {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+}
+
+/* Cards container frame at x:5436,y:-40, w:315,h:629 */
+.cards-frame {
+  position: absolute;
+  left: 30px;  /* 5436 - 5406 */
+  top: 390px;  /* -40 - (-430) */
+  width: 315px;
+  height: 629px;
+}
+
+/* Recipe card base and overlays */
+.recipe-card {
+  position: absolute;
+  width: 315px; height: 150px;
+  border-radius: var(--radius-10);
+  overflow: hidden;
+}
+.recipe-card img.bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: var(--radius-10);
+}
+.recipe-card .rect-overlay {
+  position: absolute; inset: 0;
+  border-radius: var(--radius-10);
+  background: rgba(0,0,0,0); /* style_12 + style_54 radius */
+}
+.recipe-card .rect-fill {
+  position: absolute; inset: 0;
+  border-radius: var(--radius-10);
+  background: var(--color-ffffff); /* fallback since image not available */
+  opacity: 0.0; /* transparent to let gradient/images show if present */
+}
+
+/* Rating pill */
+.rating-pill {
+  position: absolute;
+  display: flex; flex-direction: row; align-items: center; gap: 5px;
+  width: 37px; height: 16px;
+  background: var(--color-ffe1b3);
+  border-radius: 20px;
+}
+.rating-pill .star {
+  width: 8px; height: 8px;
+  background: var(--color-ffad30);
+  border-radius: 2px;
+  margin-left: 7px;
+}
+.rating-pill .value { margin-left: 4px; }
+
+/* Time chip with shadow_5 */
+.time-chip {
+  position: absolute;
+  display: flex; flex-direction: row; align-items: center; gap: 6px;
+  width: 60px; height: 24px;
+  background: var(--color-ffffff);
+  border-radius: 12px;
+  box-shadow: var(--shadow-5);
+  padding-left: 0;
+}
+.time-chip .timer {
+  width: 17px; height: 17px; background: var(--color-d9d9d9); border-radius: 3px;
+  margin-left: 0;
+}
+.time-chip .label {}
+
+.bookmark {
+  position: absolute; width: 24px; height: 24px;
+  background: var(--color-ffffff);
+  border-radius: 12px;
+}
+.bookmark .icon {
+  position: absolute; left: 4px; top: 4px; width: 16px; height: 16px;
+  background: var(--color-71b1a1);
+  border-radius: 3px;
+}
+
+/* Food titles and creators */
+.food-title { position: absolute; }
+.food-creator { position: absolute; }
+
+/* Bottom navbar, home indicator reuse common tokens */
+.navbar {
+  position: absolute;
+  left: 0px;
+  top: 692px; /* 262 - (-430) */
+  width: var(--screen-w);
+  height: 120px;
+  z-index: 10;
+}
+.navbar .bg {
+  position: absolute;
+  left: 0px; top: 14px; width: var(--screen-w); height: 106px;
+  background: var(--color-ffffff);
+  box-shadow: var(--shadow-2);
+}
+.nav-create {
+  position: absolute; left: 164px; top: 0px; width: 48px; height: 48px;
+}
+.nav-create .ring { position: absolute; inset: 0; background: var(--color-129575); border-radius: 50%; }
+.nav-create .plus { position: absolute; left: 13.5px; top: 13.5px; width: 21px; height: 21px; background: var(--color-129575); }
+
+.nav-icon { position: absolute; width: 24px; height: 24px; }
+.nav-icon.home { left: 40px; top: 38px; background: var(--color-ffffff); border: 1.5px solid var(--color-d9d9d9); }
+.nav-icon.bookmark { left: 104px; top: 38px; background: var(--color-129575); }
+.nav-icon.notify { left: 247px; top: 38px; background: var(--color-d9d9d9); }
+.nav-icon.profile { left: 311px; top: 38px; border: 1.5px solid var(--color-d9d9d9); }
+
+.home-indicator {
+  position: absolute;
+  left: 0px;
+  top: 778px; /* 348 - (-430) */
+  width: var(--screen-w); height: 34px;
+  z-index: 11;
+}
+.home-indicator .line {
+  position: absolute; left: 120px; top: 21px; width: 135px; height: 5px;
+  background: var(--color-121212); border-radius: var(--radius-100);
+}
+
+/* Header title computed like in saved-recipes: left at 123, top at 54 */
+.header-title {
+  position: absolute;
+  left: 123px;
+  top: 54px;
+}

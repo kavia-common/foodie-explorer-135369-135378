@@ -1,0 +1,254 @@
+:root {
+  /* Colors (subset used by this screen; add more as needed) */
+  --color-ffffff: #ffffff;
+  --color-000000: #000000;
+  --color-121212: #121212;
+  --color-d9d9d9: #d9d9d9;
+  --color-484848: #484848;
+  --color-129575: #129575;
+  --color-71b1a1: #71b1a1;
+  --color-ffad30: #ffad30;
+  --color-ffe1b3: #ffe1b3; /* DS style_48 */
+  --color-130f26: #130f26; /* DS style_45 */
+
+  /* Typography tokens used on this screen */
+  /* typo_84 Poppins 18/600 lh 27 color #121212 */
+  --font-family-poppins: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-family-inter: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-family-sfpro: "SF Pro Display", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+
+  --typo-84-size: 18px;
+  --typo-84-weight: 600;
+  --typo-84-line: 27px;
+  --typo-84-color: var(--color-121212);
+
+  /* typo_82 Poppins 14/600 lh 21 color #ffffff */
+  --typo-82-size: 14px;
+  --typo-82-weight: 600;
+  --typo-82-line: 21px;
+  --typo-82-color: var(--color-ffffff);
+
+  /* typo_83 Poppins 8/400 lh 12 color #d9d9d9 */
+  --typo-83-size: 8px;
+  --typo-83-weight: 400;
+  --typo-83-line: 12px;
+  --typo-83-color: var(--color-d9d9d9);
+
+  /* typo_78 Poppins 8/400 lh 12 color #000000 for rating number */
+  --typo-78-size: 8px;
+  --typo-78-weight: 400;
+  --typo-78-line: 12px;
+  --typo-78-color: var(--color-000000);
+
+  /* typo_65 Poppins 11/400 lh 16.5 color #d9d9d9 for time */
+  --typo-65-size: 11px;
+  --typo-65-weight: 400;
+  --typo-65-line: 16.5px;
+  --typo-65-color: var(--color-d9d9d9);
+
+  /* typo_79 Poppins 11/600 lh 16.5 color #ffffff (Card 2 title) */
+  --typo-79-size: 11px;
+  --typo-79-weight: 600;
+  --typo-79-line: 16.5px;
+  --typo-79-color: var(--color-ffffff);
+
+  /* typo_85 SF Pro Display 15/500 lh 17.9 color #484848 for status time */
+  --typo-85-size: 15px;
+  --typo-85-weight: 500;
+  --typo-85-line: 17.9px;
+  --typo-85-color: var(--color-484848);
+
+  /* Radii */
+  --radius-30: 30px;
+  --radius-20: 20px;
+  --radius-12: 12px;
+  --radius-10: 10px;
+  --radius-100: 100px;
+
+  /* Shadows */
+  --shadow-5: 0 4px 4px rgba(0,0,0,1);
+  --shadow-2: 0 0 8px #6c6c6c;
+
+  /* Screen dimensions for base frame */
+  --screen-w: 375px;
+  --screen-h: 812px;
+}
+
+/* Reset and base */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-ffffff);
+  font-family: var(--font-family-inter);
+}
+.screen {
+  position: relative;
+  width: var(--screen-w);
+  height: var(--screen-h);
+  background: var(--color-ffffff);
+  border-radius: var(--radius-30);
+  overflow: hidden;
+}
+
+/* Layering helpers */
+.layer { position: absolute; }
+
+/* Typography helpers */
+.text-typo-84 {
+  font-family: var(--font-family-poppins);
+  font-size: var(--typo-84-size);
+  line-height: var(--typo-84-line);
+  font-weight: var(--typo-84-weight);
+  color: var(--typo-84-color);
+}
+.text-typo-82 {
+  font-family: var(--font-family-poppins);
+  font-size: var(--typo-82-size);
+  line-height: var(--typo-82-line);
+  font-weight: var(--typo-82-weight);
+  color: var(--typo-82-color);
+}
+.text-typo-83 {
+  font-family: var(--font-family-poppins);
+  font-size: var(--typo-83-size);
+  line-height: var(--typo-83-line);
+  font-weight: var(--typo-83-weight);
+  color: var(--typo-83-color);
+}
+.text-typo-78 {
+  font-family: var(--font-family-poppins);
+  font-size: var(--typo-78-size);
+  line-height: var(--typo-78-line);
+  font-weight: var(--typo-78-weight);
+  color: var(--typo-78-color);
+}
+.text-typo-65 {
+  font-family: var(--font-family-poppins);
+  font-size: var(--typo-65-size);
+  line-height: var(--typo-65-line);
+  font-weight: var(--typo-65-weight);
+  color: var(--typo-65-color);
+}
+.text-typo-85 {
+  font-family: var(--font-family-sfpro);
+  font-size: var(--typo-85-size);
+  line-height: var(--typo-85-line);
+  font-weight: var(--typo-85-weight);
+  color: var(--typo-85-color);
+}
+.text-typo-79 {
+  font-family: var(--font-family-poppins);
+  font-size: var(--typo-79-size);
+  line-height: var(--typo-79-line);
+  font-weight: var(--typo-79-weight);
+  color: var(--typo-79-color);
+  text-align: left;
+}
+
+/* Status bar mimic */
+.status-bar { left: 0px; top: 0px; width: var(--screen-w); height: 44px; }
+.status-time { position: absolute; left: 29.5px; top: 12px; }
+
+/* Header */
+.header-title { position: absolute; left: 123px; top: 54px; }
+
+/* Cards container frame (generic positioning used in other pages) */
+.cards-frame {
+  position: absolute;
+  left: 30px; top: 91px;
+  width: 315px; height: 629px;
+}
+
+/* Recipe card generic base */
+.recipe-card {
+  position: absolute;
+  width: 315px; height: 150px;
+  border-radius: var(--radius-10);
+  overflow: hidden;
+}
+.recipe-card img.bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: var(--radius-10);
+}
+
+/* Rating pill style */
+.rating-pill {
+  position: absolute;
+  display: flex; flex-direction: row; align-items: center; gap: 5px;
+  background: var(--color-ffe1b3);
+  border-radius: 20px;
+  height: 16px; width: 37px;
+}
+.rating-pill .star {
+  width: 8px; height: 8px; background: var(--color-ffad30);
+  border-radius: 2px; margin-left: 7px;
+}
+.rating-pill .value { margin-left: 4px; }
+
+/* Bookmark area */
+.bookmark {
+  position: absolute;
+  width: 24px; height: 24px;
+  border-radius: 12px;
+  background: var(--color-ffffff);
+}
+.bookmark .icon {
+  position: absolute; left: 4px; top: 4px; width: 16px; height: 16px;
+  background: var(--color-71b1a1);
+  border-radius: 3px;
+}
+
+/* Time chip */
+.time-chip {
+  position: absolute;
+  display: flex; flex-direction: row; align-items: center; gap: 6px;
+  height: 24px; width: 60px;
+  background: var(--color-ffffff);
+  border-radius: 12px;
+  box-shadow: var(--shadow-5);
+}
+.time-chip .timer {
+  width: 17px; height: 17px; margin-left: 0px;
+  background: var(--color-d9d9d9);
+  border-radius: 3px;
+}
+.time-chip .label {}
+
+/* Titles */
+.food-title { position: absolute; max-width: 200px; }
+.food-creator { position: absolute; }
+
+/* Bottom nav bar */
+.navbar {
+  position: absolute;
+  left: 0px; top: 262px;
+  width: var(--screen-w); height: 120px;
+  z-index: 10;
+}
+.navbar .bg {
+  position: absolute; left: 0px; top: 14px; width: var(--screen-w); height: 106px;
+  background: var(--color-ffffff);
+  box-shadow: var(--shadow-2);
+}
+.nav-icon { position: absolute; width: 24px; height: 24px; }
+.nav-icon.home { left: 40px; top: 38px; background: var(--color-ffffff); border: 1.5px solid var(--color-d9d9d9); }
+.nav-icon.bookmark-active { left: 104px; top: 38px; background: var(--color-129575); }
+.nav-icon.notify { left: 247px; top: 38px; background: var(--color-d9d9d9); }
+.nav-icon.profile { left: 311px; top: 38px; border: 1.5px solid var(--color-d9d9d9); }
+
+/* Floating create button */
+.nav-create { position: absolute; left: 164px; top: 0px; width: 48px; height: 48px; }
+.nav-create .ring { position: absolute; inset: 0; background: var(--color-129575); border-radius: 50%; }
+.nav-create .plus { position: absolute; left: 13.5px; top: 13.5px; width: 21px; height: 21px; background: var(--color-129575); }
+
+/* Home indicator */
+.home-indicator { position: absolute; left: 0px; top: 348px; width: var(--screen-w); height: 34px; z-index: 11; }
+.home-indicator .line { position: absolute; left: 120px; top: 21px; width: 135px; height: 5px; background: var(--color-121212); border-radius: var(--radius-100); }
+
+/* Utility page host */
+.page {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  background: var(--color-ffffff);
+}
